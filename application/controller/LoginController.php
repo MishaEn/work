@@ -8,6 +8,9 @@ class LoginController extends Controller
         $this->model = new LoginModel();
     }
     public function action_index(){
+        $pashash = password_hash('12345', PASSWORD_ARGON2ID);
+        var_dump($pashash);
+        var_dump(password_verify('12345', $pashash));
         $this->view->render('login', 'template', null);
     }
     public function action_get_login_module(){

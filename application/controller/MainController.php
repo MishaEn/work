@@ -9,6 +9,7 @@ class MainController extends Controller{
     }
 
     public function action_index(){
+
         $data = $this->model->get_data();
         $this->view->render('main', 'template');
     }
