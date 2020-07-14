@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 14 2020 г., 10:51
+-- Время создания: Июл 14 2020 г., 13:17
 -- Версия сервера: 10.4.11-MariaDB
 -- Версия PHP: 7.4.1
 
@@ -42,18 +42,25 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `price`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 1000, '2020-07-13 17:24:35', NULL, NULL),
-(2, 3, 1000, '2020-07-13 17:24:35', NULL, NULL),
-(3, 3, 1000, '2020-07-13 17:24:35', NULL, NULL),
-(4, 4, 1000, '2020-07-13 17:24:35', NULL, NULL),
-(5, 1, 1000, '2020-07-13 17:24:35', NULL, NULL),
-(6, 5, 1000, '2020-07-13 17:24:35', NULL, NULL),
-(7, 1, 1000, '2020-07-13 17:26:08', NULL, NULL),
-(8, 3, 1000, '2020-07-13 17:26:08', NULL, NULL),
-(9, 3, 1000, '2020-07-13 17:26:08', NULL, NULL),
-(10, 4, 1000, '2020-07-13 17:26:08', NULL, NULL),
-(11, 1, 1000, '2020-07-13 17:26:08', NULL, NULL),
-(12, 5, 1000, '2020-07-13 17:26:08', NULL, NULL);
+(14, 20, 1000, '2020-07-14 14:04:21', NULL, NULL),
+(15, 20, 1000, '2020-07-14 14:04:21', NULL, NULL),
+(16, 20, 1000, '2020-07-14 14:04:21', NULL, NULL),
+(17, 21, 1000, '2020-07-14 14:04:21', NULL, NULL),
+(18, 21, 1000, '2020-07-14 14:04:21', NULL, NULL),
+(19, 21, 1000, '2020-07-14 14:04:21', NULL, NULL),
+(20, 23, 1000, '2020-07-14 14:04:21', NULL, NULL),
+(21, 23, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(22, 23, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(23, 24, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(24, 24, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(25, 25, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(26, 25, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(27, 26, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(28, 27, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(29, 28, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(30, 20, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(31, 20, 1000, '2020-07-14 14:04:22', NULL, NULL),
+(32, 20, 1000, '2020-07-14 14:04:22', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -68,7 +75,7 @@ CREATE TABLE `users` (
   `last_name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(55) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `login` varchar(55) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
@@ -79,16 +86,29 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `email`, `login`, `password`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Тест', 'Тест', 'Тест', 'test@gmail.com', 'test', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '0000-00-00 00:00:00', NULL, NULL),
-(2, 'Test', 'Test', 'Test', 'test@gmail.com', 'test2', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:11', NULL, NULL),
-(3, 'Test', 'Test', 'Test', 'test3@gmail.com', 'test3', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:11', NULL, NULL),
-(4, 'Test', 'Test', 'Test', 'test3@gmail.com', 'test4', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:11', NULL, NULL),
-(5, 'Test', 'Test', 'Test', 'test@gmail.com', 'test5', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:12', NULL, NULL),
-(6, 'Test', 'Test', 'Test', 'test4@gmail.com', 'test6', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:12', NULL, NULL),
-(7, 'Test', 'Test', 'Test', 'test1@gmail.com', 'test7', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:12', NULL, NULL),
-(8, 'Test', 'Test', 'Test', 'test@gmail.com', 'test8', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:12', NULL, NULL),
-(9, 'Test', 'Test', 'Test', 'test1@gmail.com', 'test9', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:12', NULL, NULL),
-(10, 'Test', 'Test', 'Test', 'test@gmail.com', 'test10', '$2y$10$Vq43.tylsIdk1alaglHSMO5kZUbrU9zMUJAruy8.HHQXkLn9lAX1m', '2020-07-13 17:23:12', NULL, NULL);
+(20, 'Тестер', 'Тесторович', '3123', 'test@gmail.com', 'test', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 13:36:14', '2020-07-14 12:36:47', NULL),
+(21, 'test', 'test', 'test', 'test@gmail.com', 'test1', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:13', NULL, NULL),
+(22, 'test', 'test', 'test', 'test1@gmail.com', 'test2', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:13', NULL, NULL),
+(23, 'test', 'test', 'test', 'test1@gmail.com', 'test3', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:13', NULL, NULL),
+(24, 'test', 'test', 'test', 'test2@gmail.com', 'test4', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:13', NULL, NULL),
+(25, 'test', 'test', 'test', 'test2@gmail.com', 'test5', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:13', NULL, NULL),
+(26, 'test', 'test', 'test', 'test3@gmail.com', 'test6', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(27, 'test', 'test', 'test', 'test3@gmail.com', 'test7', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(28, 'test', 'test', 'test', 'test4@gmail.com', 'test8', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(29, 'test', 'test', 'test', 'test@gmail.com', 'test9', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(30, 'test', 'test', 'test', 'test@gmail.com', 'test10', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(31, 'test', 'test', 'test', 'test@gmail.com', 'test11', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(32, 'test', 'test', 'test', 'test@gmail.com', 'test12', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(33, 'test', 'test', 'test', 'test@gmail.com', 'test13', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(34, 'test', 'test', 'test', 'test@gmail.com', 'test14', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(35, 'test', 'test', 'test', 'test@gmail.com', 'test15', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(36, 'test', 'test', 'test', 'test@gmail.com', 'test16', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(37, 'test', 'test', 'test', 'test@gmail.com', 'test17', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(38, 'test', 'test', 'test', 'test@gmail.com', 'test18', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(39, 'test', 'test', 'test', 'test@gmail.com', 'test19', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(40, 'test', 'test', 'test', 'test@gmail.com', 'test20', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(41, 'test', 'test', 'test', 'test@gmail.com', 'test21', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL),
+(42, 'test', 'test', 'test', 'test@gmail.com', 'test22', '$argon2id$v=19$m=65536,t=4,p=1$VTlOMmh3LnRuRW5pNjNCeA$HUAJAu6zHDlP7mmCKUp6DshofEwFoXR5kL48Ns2o/mI', '2020-07-14 14:01:14', NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -115,13 +135,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
