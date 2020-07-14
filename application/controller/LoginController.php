@@ -10,9 +10,11 @@ class LoginController extends Controller
     public function action_index(){
         $this->view->render('login', 'template', null);
     }
-
+    public function action_get_login_module(){
+        $this->view->get_module('login');
+    }
     public function action_authenticate(){
-        require_once ROOT_KERNEL.'/config/Validator.php';
+
 
         $validator = new Validator();
 
@@ -28,6 +30,7 @@ class LoginController extends Controller
             }
             else {
                 if(password_verify($password, $auth['password'])){
+                    $_SESSION['user']['login'] = $login;
                     $response = ['error' => false, 'status' => 'success'];
                 }
                 else{
@@ -43,5 +46,9 @@ class LoginController extends Controller
 
 
         echo json_encode($response);
+    }
+    public function action_logout(){
+        session_unset();
+        echo json_encode(['login']);
     }
 }

@@ -4,10 +4,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-1">
-                        <button class="btn-sm btn-success btn-block btn">Профиль</button>
+                        <button data-type="profile" class="btn-sm btn-success btn-block btn">Профиль</button>
                     </div>
                     <div class="col-1 offset-10">
-                        <button class="btn btn-sm btn-block btn-danger">Выйти</button>
+                        <button data-type="logout" class="btn btn-sm btn-block btn-danger">Выйти</button>
                     </div>
                 </div>
             </div>
